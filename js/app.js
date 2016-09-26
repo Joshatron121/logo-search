@@ -57,6 +57,7 @@ $(function(){
 	})
 
 	$('button').on('click', function(){
+		event.preventDefault()
 		var thisClassList = $(this.classList);
 		var dropdownClass = ('ul.' + thisClassList[0] + '-dropdown');
 		if(thisClassList[0] == 'type') {
