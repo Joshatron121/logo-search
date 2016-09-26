@@ -1,0 +1,113 @@
+
+
+h1 {
+	font-family: 'Great Vibes', cursive;
+	color: maroon;
+	font-size: 3em;
+	text-align: center;
+	margin-top: 20px;
+	min-width: 639.92px;
+}
+
+div.dropdown-field {
+	background-color: #F2F2F2;
+	height: 200px;
+	width: 100%;
+	min-width: 639.92px;
+}
+
+div.dropdown {
+	width: 48%;
+	display: inline-block;
+}
+
+button.type-field {
+	display: block;
+	background-color: white;
+	width: 100%;
+	padding: 15px;
+	color: #D2D8BA;
+	font-size: 1em;
+	border: 1px solid #D5D1D1;
+}
+
+span.icon {
+	float: right;
+}
+
+ul {
+	display: none;
+	position: absolute;
+	list-style: none;
+	width: 287px;
+	padding-left: 0;
+	border-left: 1px solid #BCB6B8;
+	border-top: 1px solid #BCB6B8;
+}
+
+li {
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 13px;
+	background-color: #E2DCDC;
+	border-top: 1px solid #D5D1D1;
+}
+
+a {
+	color: #430701;
+	text-decoration: none;
+}
+
+.button-row {
+	margin: 0 auto;
+}
+button.search {
+	width: 100%;
+	margin-top: 10px;
+	background-color: #9E222A;
+	border: none;
+	color: white;
+	padding: 5px;
+}
+
+div.school-level-drop {
+	margin-left: 2%;
+}
+
+div.selection-field{
+	padding-top: 100px;
+}
+
+div.images-set{
+	min-width: 639.92px;
+}
+
+img {
+	display: block;
+	margin: auto;
+}
+
+.col-8 {
+	margin: 0 auto;
+}
+
+.grey {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: .075;
+}
+
+section.images .row {
+	margin-top: 20px;
+}
+
+img[alt="ACI"] {
+	margin-top: 10%;
+}
+
+img[alt="AFE"] {
+	margin-top: 10%;
+}
+
