@@ -2,44 +2,17 @@ $(function(){
 	var searchedFor = [true, true]
 
 	var resetIcons = function(){
-		$('img').removeClass('grey');
-		$('img').addClass('grey');
+		$('img').removeClass('grey-fade-in');
 	}
-
-	// var setIconsSetA = function(termsArray) {
-	// 	if(termsArray[0] == 'SEARCH ALL') {
-	// 		$('.lp').removeClass('grey');
-	// 		$('.sp').removeClass('grey');
-	// 	} else if (termsArray[0] == 'SCHOLARSHIP PROGRAM') {
-	// 		$('.sp').removeClass('grey');
-	// 	} else if (termsArray[0] == 'LOAN PROGRAM') {
-	// 		$('.lp').removeClass('grey');
-	// 	}
-	// }
-
-	// var setIconsSetB = function(termsArray) {
-	// 	if(termsArray[1] == 'SEARCH ALL') {
-	// 		$('.kg').removeClass('grey');
-	// 		$('.hs').removeClass('grey');
-	// 	} else if (termsArray[1] == 'KINDERGARTEN') {
-	// 		$('.kg').removeClass('grey');
-	// 	} else if (termsArray[1] == 'HIGH SCHOOL') {
-	// 		$('.hs').removeClass('grey');
-	// 	}
-	// }
 
 	var setIcons = function(searchTerms, searchedThis){
 		var thisSearch = [];
 
 		$.each(searchedThis, function(index, value){
-			console.log(value)
 			if(value == false){
 				searchTerms[index] = '';
-				console.log(searchTerms[index])
 			}
 		})
-
-		console.log(searchTerms)
 
 		$.each(searchTerms, function(index, value){
 			if(value == 'all') {
@@ -54,18 +27,16 @@ $(function(){
 				thisSearch.push('.'+ value);
 			}
 		})
+		console.log(thisSearch)
 		$.each(thisSearch, function(index, value){
 			if(value !== '.'){
-				$(value).removeClass('grey')
+				$('img' + value).addClass('grey-fade-in')
 			}
 		})
 
 		$.each(searchedFor, function(index, value){
 			searchedFor[index] = false;
 		})
-
-		console.log(thisSearch)
-		
 	}
 
 	$('ul').on('click', 'li', function(){
@@ -77,26 +48,23 @@ $(function(){
 	})
 
 	$('button.search').click(function(){
-		event.preventDefault()
-		var searchTerms =[]
-		resetIcons()
-		searchTerms.push($('.type').attr('id'))
-		searchTerms.push($('.school-level').attr('id'))
-		console.log(searchTerms)
-		setIcons(searchTerms, searchedFor)
+		event.preventDefault();
+		var searchTerms =[];
+		resetIcons();
+		searchTerms.push($('.type').attr('id'));
+		searchTerms.push($('.school-level').attr('id'));
+		setIcons(searchTerms, searchedFor);
 	})
 
 	$('button').on('click', function(){
-		var thisClassList = $(this.classList)
-		var dropdownClass = ('ul.' + thisClassList[0] + '-dropdown')
-		console.log(thisClassList[0])
+		var thisClassList = $(this.classList);
+		var dropdownClass = ('ul.' + thisClassList[0] + '-dropdown');
 		if(thisClassList[0] == 'type') {
 			searchedFor[0] = true
 		}
 		if (thisClassList[0] == 'school-level') {
 			searchedFor[1] = true
 		}
-		console.log('typeSearched: ' + searchedFor[0] + ' schoolSearched: ' + searchedFor[1])
 		if($(dropdownClass).css('display') == 'none') {
 			$(dropdownClass).fadeIn();
 		} else {
